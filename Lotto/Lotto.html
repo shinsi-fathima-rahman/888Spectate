@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <script src="lotto.js" async></script>
+    <script>
+      function buttonClick(event) {
+        event.preventDefault();
+        //reset the old table;
+        const old_tbody = document.getElementById("lotto__results-tableBody");
+        old_tbody.innerHTML = "";
+        let inputVal = document.getElementById("input").value;
+        getNextLottoDraw(inputVal);
+      }
+    </script>
+    <link rel="stylesheet" href="lotto.css" />
+  </head>
+  <body class="lotto__body">
+    <div class="lotto__container">
+      <header class="lotto__header">
+        Lotto Calculator
+        <div class="diagonal-box">
+          <div class="content">NEW</div>
+        </div>
+      </header>
+      <aside class="info__container">
+        <div class="info__header">The Irish Lotto</div>
+        <div class="info__content">
+          Since 16th April 1988, the Irish Lotto draw takes place every Saturday
+          at 8pm. On 30th May 1990 an additional Wednesday evening draw was
+          introduced.
+          <div>
+            Enter a date in the form to get the next three draw dates as well as
+            the previous two draws.
+          </div>
+        </div>
+      </aside>
+      <section class="lotto__form">
+        <div class="lotto__form-header">Enter a Date and Time</div>
+        <form id="lotto__form" class="lotto__form-input-box">
+          <div class="lotto__form-input">
+            <input id="input" type="text" />
+            <button onclick="buttonClick(event)" class="lotto__form-submit">
+              SUBMIT
+            </button>
+          </div>
+        </form>
+      </section>
+      <section class="lotto__results">
+        <table id="resultsTable" class="lotto__results-table">
+          <thead>
+            <tr>
+              <td>DRAW DATE</td>
+              <td>PAST OR FUTURE</td>
+            </tr>
+          </thead>
+          <tbody id="lotto__results-tableBody">
+            <tr class="lotto__table-rowInitial">
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="lotto__table-rowInitial">
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="lotto__table-rowInitial">
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="lotto__table-rowInitial">
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="lotto__table-rowInitial">
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </body>
+</html>
